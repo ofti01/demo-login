@@ -7,6 +7,8 @@
         <name>java:global/DataSourceName</name>
         <class-name>org.h2.jdbcx.JdbcDataSource</class-name>
         <url>jdbc:h2:mem:test;MODE=LEGACY;DB_CLOSE_DELAY=-1</url>
+        <user>sa</user>
+        <password>sa</password>
     </data-source>
 
     <context-param>
@@ -22,4 +24,14 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>H2Console</servlet-name>
+        <servlet-class>org.h2.server.web.JakartaWebServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>H2Console</servlet-name>
+        <url-pattern>/console/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>
