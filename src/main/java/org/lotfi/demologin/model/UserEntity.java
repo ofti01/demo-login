@@ -1,5 +1,7 @@
 package org.lotfi.demologin.model;
 
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,6 +16,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter @Setter
+@Named("user")
+@RequestScoped
 public class UserEntity implements Serializable {
 
     @Id
